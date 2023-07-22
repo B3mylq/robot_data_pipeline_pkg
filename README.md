@@ -56,8 +56,8 @@ source devel/setup.bash
 ## 2、下位机启动
 ---
 ## 3、通信结构与数据格式说明
-### 上下位机间的通信结构如图所示，下位机、上位机中继发布节点(src/robot_state_pub_node.cpp)和上位机中继接收节点(src/robot_state_sub_node.cpp)间基于zmq进行通信，中继节点通过rostopic与上位机的其他客户端进行交互。
-### 用户通过中继发布节点提供的RobotState消息获取下位机数据，格式定义于msg/RobotState.msg,各属性解释如下
+&emsp;&emsp;上下位机间的通信结构如图所示，下位机、上位机中继发布节点(src/robot_state_pub_node.cpp)和上位机中继接收节点(src/robot_state_sub_node.cpp)间基于zmq进行通信，中继节点通过rostopic与上位机的其他客户端进行交互。\
+&emsp;&emsp;用户通过中继发布节点提供的RobotState消息获取下位机数据，格式定义于msg/RobotState.msg,各属性解释如下
 __RobotState数据结构__
 | 属性        | 含义   |  备注  |
 | :--------:   | :-----:  | :----:  |
