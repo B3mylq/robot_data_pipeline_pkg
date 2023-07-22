@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RobotXIV>
+	<Model>
+	</Model>
+	<Server net_id="rbt_resp" ip="10.0.0.201" cmd_port="5866" data_pub_port="5880">
+		<Commands>
+			<start/>
+			<stop/>
+			<exit/>
+			<cq />
+			<zrt />
+			<zft2 />
+			<en default="all">
+				<all abbreviation="a"/>
+				<legC abbreviation="C"/>
+				<legB abbreviation="B"/>
+				<first abbreviation="F"/>
+				<second abbreviation="S"/>
+				<third abbreviation="T"/>
+				<motor abbreviation="m" type="intArray" default="0"/>
+				<physical_motor abbreviation="p" type="intArray" default="0"/>
+				<leg abbreviation="l" type="intArray" default="0"/>
+			</en>
+			<ds default="all">
+				<all abbreviation="a"/>
+				<legC abbreviation="C"/>
+				<legB abbreviation="B"/>
+				<first abbreviation="F"/>
+				<second abbreviation="S"/>
+				<third abbreviation="T"/>
+				<motor abbreviation="m" type="intArray" default="0"/>
+				<physical_motor abbreviation="p" type="intArray" default="0"/>
+				<leg abbreviation="l" type="intArray" default="0"/>
+			</ds>
+			<hm default="all">
+				<all abbreviation="a"/>
+				<legC abbreviation="C"/>
+				<legB abbreviation="B"/>
+				<first abbreviation="F"/>
+				<second abbreviation="S"/>
+				<third abbreviation="T"/>
+				<motor abbreviation="m" type="intArray" default="0"/>
+				<physical_motor abbreviation="p" type="intArray" default="0"/>
+				<leg abbreviation="l" type="intArray" default="0"/>
+			</hm>
+			<hmsw default="hmsw_param">
+				<hmsw_param type="group" >
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<first abbreviation="F"/>
+						<second abbreviation="S"/>
+						<third abbreviation="T"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<vel abbreviation="v" type="int" default="1000"/>
+					<acc abbreviation="c" type="int" default="10000"/>
+				</hmsw_param>
+			</hmsw>
+			<jog default="jog_param">
+				<jog_param type="group" >
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<first abbreviation="F"/>
+						<second abbreviation="S"/>
+						<third abbreviation="T"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+						<leg_plane abbreviation="x" type="intArray" default="0"/>
+					</motor_select>
+					<vel abbreviation="v" type="int" default="2000"/>
+					<acc abbreviation="c" type="int" default="20000"/>
+					<stop abbreviation="q" type="int" default="0"/>
+				</jog_param>
+			</jog>
+			<fake_home/>
+			<rc default="rc_param">
+				<rc_param type="group" >
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<t_retract abbreviation="t" type="double" default="1.5"/>
+					<t_extend abbreviation="r" type="double" default="1.5"/>
+					<t_wait abbreviation="x" type="double" default="1"/>
+					<hard abbreviation="h" type="int" default="0"/>
+				</rc_param>
+			</rc>
+			<tst default="param">
+				<param type="group" >
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<kpRol type="double" default="800"/>
+					<kpPit type="double" default="500"/>
+					<kpYaw type="double" default="300"/>
+					<kdRol type="double" default="25"/>
+					<kdPit type="double" default="25"/>
+					<kdYaw type="double" default="25"/>
+					<height_offset abbreviation="o" type="double" default="0"/>
+					<slope_offset abbreviation="s" type="double" default="0"/>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</tst>
+			<nb default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<vx type="double" default="0"/>
+					<vy type="double" default="0"/>
+					<wz type="double" default="0"/>
+					<pit type="double" default="0"/>
+					<zOffset type="double" default="0"/>
+					<stepH type="double" default="0.05"/>
+					<mode type="int" default="0"/>
+					<terrain type="int" default="0"/>
+					<gait type="int" default="3"/>
+					<period type="double" default="0.7"/>
+					<duty type="double" default="0.6"/>
+					<flip type="int" default="0"/>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</nb>
+			<td default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<sx type="double" default="0"/><!--跨长x-->
+					<sy type="double" default="0"/><!--跨长y-->
+					<syaw type="double" default="0"/><!--跨yaw-->
+					<pit	type="double" default="0"/><!--恒定pit-->
+					<zOffset type="double" default="0"/>
+					<stepH type="double" default="0.06"/><!--步高-->
+					<vpc type="doubleArray" default="0,0,0,0,0,0,0,0,0,0,0,0"/>
+					<period type="double" default="0.8"/>
+					<duty type="double" default="0.52"/>
+					<flip type="int" default="0"/>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</td>
+			<span default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<sx type="double" default="0"/><!--跨长x-->
+					<sy type="double" default="0"/><!--跨长y-->
+					<syaw type="double" default="0"/><!--跨yaw-->
+					<pit	type="double" default="0"/><!--连续pit-->
+					<zOffset type="double" default="0"/>
+					<stepH type="double" default="0.06"/><!--步高-->
+					<tag type="int" default="0"/><!--步高-->
+					<vpc type="doubleArray" default="0,0,0,0,0,0,0,0,0,0,0,0"/>
+					<period type="double" default="1.2"/>
+					<duty type="double" default="0.7"/>
+					<flip type="intArray" default="0,0,0,0,0,0,0"/>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</span>
+			<jump default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</jump>
+			<getUp default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</getUp>
+			<backUp default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</backUp>
+			<one default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<sx type="double" default="0"/>
+					<sy type="double" default="0"/>
+					<syaw type="double" default="0"/>
+					<rol type="double" default="0"/>
+					<pit type="double" default="0"/>
+					<zOffset type="double" default="0"/>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</one>
+			<pid default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<vx type="double" default="0"/>
+					<kpP type="doubleArray" default="100,100,100"/>
+					<kdP type="doubleArray" default="0.2,0.2,0.2"/>
+					<kpS type="doubleArray" default="100,10,10"/>
+					<kdS type="doubleArray" default="0.2,0.2,0.2"/>
+					<kpJ type="doubleArray" default="5,5,5"/>
+					<kdJ type="doubleArray" default="0.2,0.2,0.2"/>
+					<stepH type="double" default="0.05"/>
+					<period type="double" default="0.8"/>
+					<duty type="double" default="0.56"/>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</pid>
+			<slt default="param">
+				<param type="group">
+					<online_flag type="unique" default="offline">
+						<offline/>
+						<online abbreviation="o"/>
+					</online_flag>
+					<motor_select type="unique" default="all">
+						<all abbreviation="a"/>
+						<legC abbreviation="C"/>
+						<legB abbreviation="B"/>
+						<motor abbreviation="m" type="intArray" default="0"/>
+						<physical_motor abbreviation="p" type="intArray" default="0"/>
+						<leg abbreviation="l" type="intArray" default="0"/>
+					</motor_select>
+					<quit abbreviation="q" type="int" default="0"/>
+					<start abbreviation="b" type="int" default="0"/>
+					<stop abbreviation="e" type="int" default="0"/>
+				</param>
+			</slt>
+			<MotorTest default="param">
+              <param type="group" >
+                <motor_select type="unique" default="all">
+                  <all abbreviation="a"/>
+                  <legC abbreviation="C"/>
+                  <legB abbreviation="B"/>
+                  <motor abbreviation="m" type="intArray" default="0"/>
+                  <physical_motor abbreviation="p" type="intArray" default="0"/>
+                  <leg abbreviation="l" type="intArray" default="0"/>
+                </motor_select>
+                <flag abbreviation="f" type="double" default="1.5"/>
+              </param>
+            </MotorTest>
+			<Recover default="param">
+              <param type="group" >
+                <motor_select type="unique" default="all">
+                  <all abbreviation="a"/>
+                  <legC abbreviation="C"/>
+                  <legB abbreviation="B"/>
+                  <motor abbreviation="m" type="intArray" default="0"/>
+                  <physical_motor abbreviation="p" type="intArray" default="0"/>
+                  <leg abbreviation="l" type="intArray" default="0"/>
+                </motor_select>
+                <flag abbreviation="f" type="double" default="1.5"/>
+              </param>
+            </Recover>
+			<Down default="param">
+              <param type="group" >
+                <motor_select type="unique" default="all">
+                  <all abbreviation="a"/>
+                  <legC abbreviation="C"/>
+                  <legB abbreviation="B"/>
+                  <motor abbreviation="m" type="intArray" default="0"/>
+                  <physical_motor abbreviation="p" type="intArray" default="0"/>
+                  <leg abbreviation="l" type="intArray" default="0"/>
+                </motor_select>
+                <flag abbreviation="f" type="double" default="1.5"/>
+              </param>
+            </Down>
+			<ParamTest default="param">
+              <param type="group" >
+				<online_flag type="unique" default="offline">
+                  <offline/>
+                  <online/>
+                </online_flag>
+                <motor_select type="unique" default="all">
+                  <all abbreviation="a"/>
+                  <legC abbreviation="C"/>
+                  <legB abbreviation="B"/>
+                  <motor abbreviation="m" type="intArray" default="0"/>
+                  <physical_motor abbreviation="p" type="intArray" default="0"/>
+                  <leg abbreviation="l" type="intArray" default="0"/>
+                </motor_select>
+                <quit type="double" default="0.0"/>
+				<speed type="double" default="0.0"/>
+				<height type="double" default="0.38"/>
+              </param>
+            </ParamTest>
+			<TripodTrot default="param">
+              <param type="group" >
+				<online_flag type="unique" default="offline">
+                  <offline/>
+                  <online/>
+                </online_flag>
+                <motor_select type="unique" default="all">
+                  <all abbreviation="a"/>
+                  <legC abbreviation="C"/>
+                  <legB abbreviation="B"/>
+                  <motor abbreviation="m" type="intArray" default="0"/>
+                  <physical_motor abbreviation="p" type="intArray" default="0"/>
+                  <leg abbreviation="l" type="intArray" default="0"/>
+                </motor_select>
+                <quit type="double" default="0.0"/>
+				<speed type="double" default="0.0"/>
+				<height type="double" default="0.38"/>
+              </param>
+            </TripodTrot>
+		</Commands>
+	</Server>
+	<Controller control_freq="1000" record_freq="100">
+		<EtherCat>
+			<SlaveType>
+				<DiamondDrive product_code="0x00009252" vender_id="0x00418108" alias="0" distributed_clock="0x0700">
+					 <PDO>
+						<index_1600 index="0x1600" is_tx="false">
+							<ControlWord index="0x6040" subindex="0x00" type="uint16"/>
+							<TargetPosition index="0x607A" subindex="0x00" type="int32"/>
+							<VelocityOffset index="0x60B1" subindex="0x00" type="int32"/>
+							<TorqueOffset   index="0x60B2" subindex="0x00" type="int16"/>
+							<TargetVelocity index="0x60FF" subindex="0x00" type="int32"/>
+							<TargetTorque index="0x6071" subindex="0x00" type="int16"/>
+							<ModeOfOperation index="0x6060" subindex="0x00" type="uint8"/>
+							<Dummy index="0x2060" subindex="0x00" type="uint8"/>
+						</index_1600>
+						<index_1a00 index="0x1A00" is_tx="true">
+							<StatusWord index="0x6041" subindex="0x00" type="uint16"/>
+							<PositionActualValue index="0x6064" subindex="0x00" type="int32"/>
+							<VelocityActualValue index="0x606c" subindex="0x00" type="int32"/>
+							<TorqueActualValue index="0x6077" subindex="0x00" type="int16"/>
+							<ModeOfOperationDisplay index="0x6061" subindex="0x00" type="uint8"/>
+							<Dummy index="0x6061" subindex="0x00" type="uint8"/>
+						</index_1a00>
+					</PDO>
+					<SDO>
+						<homeMode index="0x6098" subindex="0" type="int8" config="35"/>
+						<homeAcc index="0x609A" subindex="0" type="uint32" config="20000"/>
+						<homeHighSpeed index="0x6099" subindex="1" type="uint32" config="8000"/>
+						<homeLowSpeed index="0x6099" subindex="2" type="uint32" config="4000"/>
+						<VelEncoderFactor_Numerator index="0x6094" subindex="1" type="uint32" config="1"/>
+						<VelEncoderFactor_Divisor index="0x6094" subindex="2" type="uint32" config="1"/>
+						<homeOffset index="0x607C" subindex="0" type="int32" config="0"/>
+						<controlFreq1 index="0x60C2" subindex="1" type="int8" config="1"/>
+						<controlFreq2 index="0x60C2" subindex="2" type="int8" config="-3"/>
+						<disIfExit index="0x6007" subindex="0" type="int16" config="2"/>
+						<!-- <maxCurrent index="0x2200" subindex="10" type="uint32" config="40000"/>
+						<currentKp index="0x2000" subindex="4" type="int32" config="1500"/> -->
+						<enCspOffset index="0x2006" subindex="0" type="int16" config="1"/>
+						<posKp index="0x2000" subindex="1" type="int32" config="6"/>
+						<velKp index="0x2000" subindex="2" type="int32" config="70"/>
+						<velKi index="0x2000" subindex="3" type="int32" config="0"/>
+						<!-- <posKp index="0x2000" subindex="1" type="int32" config="0"/>
+						<velKp index="0x2000" subindex="2" type="int32" config="0"/>
+						<velKi index="0x2000" subindex="3" type="int32" config="0"/> -->
+					</SDO>
+				</DiamondDrive>
+				<!-- 小腿sdo速度环kp较小，故又放一项 -->
+				<DiamondDriveShank product_code="0x00009252" vender_id="0x00418108" alias="0" distributed_clock="0x0700">
+					 <PDO>
+						<index_1600 index="0x1600" is_tx="false">
+							<ControlWord index="0x6040" subindex="0x00" type="uint16"/>
+							<TargetPosition index="0x607A" subindex="0x00" type="int32"/>
+							<VelocityOffset index="0x60B1" subindex="0x00" type="int32"/>
+							<TorqueOffset   index="0x60B2" subindex="0x00" type="int16"/>
+							<TargetVelocity index="0x60FF" subindex="0x00" type="int32"/>
+							<TargetTorque index="0x6071" subindex="0x00" type="int16"/>
+							<ModeOfOperation index="0x6060" subindex="0x00" type="uint8"/>
+							<Dummy index="0x2060" subindex="0x00" type="uint8"/>
+						</index_1600>
+						<index_1a00 index="0x1A00" is_tx="true">
+							<StatusWord index="0x6041" subindex="0x00" type="uint16"/>
+							<PositionActualValue index="0x6064" subindex="0x00" type="int32"/>
+							<VelocityActualValue index="0x606c" subindex="0x00" type="int32"/>
+							<TorqueActualValue index="0x6077" subindex="0x00" type="int16"/>
+							<ModeOfOperationDisplay index="0x6061" subindex="0x00" type="uint8"/>
+							<Dummy index="0x6061" subindex="0x00" type="uint8"/>
+						</index_1a00>
+					</PDO>
+					<SDO>
+						<homeMode index="0x6098" subindex="0" type="int8" config="35"/>
+						<homeAcc index="0x609A" subindex="0" type="uint32" config="20000"/>
+						<homeHighSpeed index="0x6099" subindex="1" type="uint32" config="8000"/>
+						<homeLowSpeed index="0x6099" subindex="2" type="uint32" config="4000"/>
+						<VelEncoderFactor_Numerator index="0x6094" subindex="1" type="uint32" config="1"/>
+						<VelEncoderFactor_Divisor index="0x6094" subindex="2" type="uint32" config="1"/>
+						<homeOffset index="0x607C" subindex="0" type="int32" config="0"/>
+						<controlFreq1 index="0x60C2" subindex="1" type="int8" config="1"/>
+						<controlFreq2 index="0x60C2" subindex="2" type="int8" config="-3"/>
+						<disIfExit index="0x6007" subindex="0" type="int16" config="2"/>
+						<!-- <maxCurrent index="0x2200" subindex="10" type="uint32" config="40000"/>
+						<currentKp index="0x2000" subindex="4" type="int32" config="1500"/> -->
+						<enCspOffset index="0x2006" subindex="0" type="int16" config="1"/>
+						<posKp index="0x2000" subindex="1" type="int32" config="6"/>
+						<velKp index="0x2000" subindex="2" type="int32" config="40"/>
+						<velKi index="0x2000" subindex="3" type="int32" config="0"/>
+						<!-- <posKp index="0x2000" subindex="1" type="int32" config="0"/>
+						<velKp index="0x2000" subindex="2" type="int32" config="0"/>
+						<velKi index="0x2000" subindex="3" type="int32" config="0"/> -->
+					</SDO>
+				</DiamondDriveShank>
+				
+				
+				<MeHeavyEFTX2IMU product_code="0x26483058" vender_id="0x00000947" alias="0">
+					<PDO>
+						<index_1a00 index="0x1a00" is_tx="true">
+							<Fx index="0x6000" subindex="0x01" type="int32"/>
+							<Fy index="0x6000" subindex="0x02" type="int32"/>
+							<Fz index="0x6000" subindex="0x03" type="int32"/>
+							<Mx index="0x6000" subindex="0x04" type="int32"/>
+							<My index="0x6000" subindex="0x05" type="int32"/>
+							<Mz index="0x6000" subindex="0x06" type="int32"/>
+						</index_1a00>
+						<index_1a02 index="0x1a02" is_tx="true">
+							<Fx index="0x6020" subindex="0x01" type="int32"/>
+							<Fy index="0x6020" subindex="0x02" type="int32"/>
+							<Fz index="0x6020" subindex="0x03" type="int32"/>
+							<Mx index="0x6020" subindex="0x04" type="int32"/>
+							<My index="0x6020" subindex="0x05" type="int32"/>
+							<Mz index="0x6020" subindex="0x06" type="int32"/>
+						</index_1a02>
+						<index_1a04 index="0x1a04" is_tx="true">
+							<ax index="0x6040" subindex="0x01" type="int32"/>
+							<ay index="0x6040" subindex="0x02" type="int32"/>
+							<az index="0x6040" subindex="0x03" type="int32"/>
+							<gx index="0x6040" subindex="0x04" type="int32"/>
+							<gy index="0x6040" subindex="0x05" type="int32"/>
+							<gz index="0x6040" subindex="0x06" type="int32"/>
+							<q1 index="0x6040" subindex="0x07" type="int32"/>
+							<q2 index="0x6040" subindex="0x08" type="int32"/>
+							<q3 index="0x6040" subindex="0x09" type="int32"/>
+							<q4 index="0x6040" subindex="0x10" type="int32"/>
+						</index_1a04>
+						<index_1600 index="0x1600" is_tx="false">
+							<zero index="0x7000" subindex="0x01" type="uint8"/>
+							<baud index="0x7000" subindex="0x02" type="uint8"/>
+						</index_1600>
+					</PDO>
+					<SDO>
+					</SDO>
+				</MeHeavyEFTX2IMU>
+
+			</SlaveType>
+			<Slave>
+				<Driver1   type="DiamondDrive"/>
+				<Driver2   type="DiamondDrive"/>
+				<Driver3   type="DiamondDriveShank"/>
+				<Driver4   type="DiamondDrive"/>
+				<Driver5   type="DiamondDrive"/>
+				<Driver6   type="DiamondDriveShank"/>
+				<Driver7   type="DiamondDrive"/>
+				<Driver8   type="DiamondDrive"/>
+				<Driver9   type="DiamondDriveShank"/>
+				<Driver10  type="DiamondDrive"/>
+				<Driver11  type="DiamondDrive"/>
+				<Driver12  type="DiamondDriveShank"/>
+				<Driver13  type="DiamondDrive"/>
+				<Driver14  type="DiamondDriveShank"/>
+				<Driver15  type="DiamondDrive"/>
+				<Driver16  type="DiamondDrive"/>
+				<Driver17  type="DiamondDriveShank"/>
+				<Driver18  type="DiamondDrive"/>
+				<FSRIMU type="MeHeavyEFTX2IMU" roll0="0.0" pitch0="0.0" />
+			</Slave>
+			<LogicMotionAxis>
+				<Motion1  type="DiamondDrive" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="-8873"  driver_id="0"  abs_id="14" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion2  type="DiamondDrive" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="5757"  driver_id="1"  abs_id="13" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion3  type="DiamondDriveShank" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="42243.033" base_cnt="-51871"  driver_id="2"  abs_id="12" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+
+				<Motion4  type="DiamondDrive" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="7628"  driver_id="3"  abs_id="11" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion5  type="DiamondDrive" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="7621"  driver_id="4"  abs_id="10" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion6  type="DiamondDriveShank" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="42243.033" base_cnt="-124537"  driver_id="5"  abs_id="9" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+
+				<Motion7  type="DiamondDrive" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="-13488"  driver_id="6"  abs_id="17" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion8  type="DiamondDrive" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="-1303"  driver_id="7"  abs_id="16" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion9  type="DiamondDriveShank" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="42243.033" base_cnt="-86478"  driver_id="8"  abs_id="15" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+
+				<Motion10  type="DiamondDrive" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="14279"  driver_id="9"  abs_id="8" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion11  type="DiamondDrive" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="2474"  driver_id="10"  abs_id="7" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion12  type="DiamondDriveShank" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="42243.033" base_cnt="-85683"  driver_id="11"  abs_id="6" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+
+				<Motion13  type="DiamondDrive" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="-10608"  driver_id="12"  abs_id="2" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion14  type="DiamondDriveShank" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="42243.033" base_cnt="-33623"  driver_id="13"  abs_id="0" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion15  type="DiamondDrive" motor_dir="1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="10449"  driver_id="14"  abs_id="1" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+
+				<Motion16  type="DiamondDrive" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="10469"  driver_id="15"  abs_id="5" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion17  type="DiamondDriveShank" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="42243.033" base_cnt="-83587"  driver_id="16"  abs_id="3" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+				<Motion18  type="DiamondDrive" motor_dir="-1"  min_pos="-100" max_pos="100" max_vel="1000" home_pos="0" input2count="23468.3517" base_cnt="8622"  driver_id="17"  abs_id="4" trq_index="0" trq_subindex="0" trq_dir="-1" trq_posratio="-31.1551" trq_negratio="-29.65487"/>
+			</LogicMotionAxis>
+		</EtherCat>
+	</Controller>
+	<Sensors>
+		<IMU active="false" type="xsens_imu" portLinux="/dev/ttyUSB0" baudRate="921600" sampleRate="400" PeImuGround2BodyGound="{0,0,0,0,-PI/2,PI}" PeImu2Body="{0,0,0,0,PI/2,0}"/>
+		<Vision type="kinect2.0"/>
+	</Sensors>
+	<DataAgent ip="10.0.0.201" router_port="5882" dealer_port="5884" data_sub_port="5886">
+	</DataAgent>
+	<Clients>
+		<LineCommander net_id="lcmd_req"/>
+		<RLGet net_id="rl_get"/>
+		<RLPut net_id="rl_put"/>
+		<TrnWalkHighLvPlanner net_id="twk_hl_planner"/>
+		<VisionDemo net_id="vision_demo"/>
+		<FakeServer net_id="rbt_resp" ip="127.0.0.1" cmd_port="5866" data_pub_port="5880"/>
+	</Clients>
+</RobotXIV>
