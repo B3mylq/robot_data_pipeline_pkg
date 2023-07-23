@@ -1,7 +1,17 @@
 # Communication Interface Package for Littledog
 
 ## 1、配置和编译
-### 1.1 安装支持库 
+### 1.1 编译工作包
+打开终端，创建或进入ROS工作空间，执行以下命令克隆项目并编译
+```bash
+cd src
+git clone https://github.com/B3mylq/robot_data_pipeline_pkg
+cd ..
+catkin_make
+source devel/setup.bash
+```
+
+### 1.2 安装支持库(应对1.1报错缺少对应依赖的情况，如果1.1编译成功则不需要进行这一步) 
 a. 编译安装libzmq：\
 下载源码: 
 ```bash 
@@ -45,16 +55,6 @@ https://github.com/gabime/spdlog.git
 cd spdlog && mkdir build && cd build
 cmake ..
 sudo make install
-```
-
-### 1.2 编译工作包
-打开终端，创建或进入ROS工作空间，执行以下命令克隆项目并编译
-```bash
-cd src
-git clone https://github.com/B3mylq/robot_data_pipeline_pkg
-cd ..
-catkin_make
-source devel/setup.bash
 ```
 
 ---
