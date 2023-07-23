@@ -32,16 +32,18 @@ int main(int argc, char **argv){
 
     ros::Publisher pub_test = nh.advertise<std_msgs::String>("Hello",10);
 
+    // 在这一行定义中继发布节点发布的rostopic名称
     ros::Publisher robot_data_pub = nh.advertise<robot_data_pipeline_pkg::RobotState>("Robot_Data",10);
     robot_data_pipeline_pkg::RobotState robot_state_message;
 
+    // 在这一行定义上下位机通信频率，最高500Hz
     ros::Rate loop_rate(20);//1000Hz
 
     while (ros::ok())
     {
         std_msgs::String msg;
         msg.data = "hello, world";
-        pub_test.publish(msg);
+        // pub_test.publish(msg);
 
 
 ///////////////////////////////////////////////////////////////

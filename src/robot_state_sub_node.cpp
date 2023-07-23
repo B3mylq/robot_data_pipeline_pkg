@@ -70,7 +70,7 @@ int main(int argc, char **argv){
 
     // ros::Subscriber sub_test = nh.subscribe("/RobotMini_State_Pub_Node/Hello",10, &RobotSub::callback_test, &robot_suber);
 
-    ///  topic 名字  改一下,  这个 频率 取决于 topic 的频率
+    ///  在这一行定义中继接收节点接收的rostopic名称,  接收频率取决于topic的频率
     ros::Subscriber robot_cmd_sub = nh.subscribe("/RL_Gait/RobotCmd",1000, &RobotSub::callback, &robot_suber);
 
     ros::spin();
