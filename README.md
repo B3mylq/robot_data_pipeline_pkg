@@ -62,6 +62,7 @@ source devel/setup.bash
 ---
 ## 3、通信结构与数据格式说明
 &emsp;&emsp;上下位机间的通信结构如图所示，下位机、上位机中继发布节点(src/robot_state_pub_node.cpp)和上位机中继接收节点(src/robot_state_sub_node.cpp)间基于zmq进行通信，中继节点通过rostopic与上位机的其他客户端进行交互。
+![](https://github.com/B3mylq/robot_data_pipeline_pkg/blob/main/img/communication_structure.png)
 
 &emsp;&emsp;用户通过中继发布节点提供的RobotState消息获取下位机数据，格式定义于msg/RobotState.msg,各属性解释如下：
 
