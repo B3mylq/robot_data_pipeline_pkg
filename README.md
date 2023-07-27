@@ -102,3 +102,38 @@ rosrun robot_data_pipeline_pkg robot_state_sub
 ```
 
 此时客户端可以通过rostopic向中继节点订阅状态和发布指令。
+
+---
+## 5、小狗实机操作指南--23/7/26(针对仓库更新时间的Jetson本地目录和实验需求，不一定长期有效)
+### 5.1 启动ROS核心
+新建一个终端，启动ROS核心：
+```bash 
+roscore
+```
+### 5.2 小狗进入上位机控制模式
+按照第2章的要求启动小狗，在网页中执行recover指令使小狗恢复正常站立姿态；
+在网页中点击RlContorl按键进入上位机控制模式。
+### 5.3 启动中继发布节点
+新建终端，进入rl_dog工作空间，启动中继发布节点。如果5.2操作正确，此时能看到终端中滚动发布下位机上发的数据。
+```bash 
+cd ~/ros_ws/rl_dog
+source devel/setup.bash
+rosrun robot_data_pipeline_pkg robot_state_pub
+```
+### 5.4 启动中继接收节点
+新建终端，进入rl_dog工作空间，启动中继接收节点。
+```bash 
+cd ~/ros_ws/rl_dog
+source devel/setup.bash
+rosrun robot_data_pipeline_pkg robot_state_sub
+```
+### 5.5 用户启动自己编写的程序
+以isaac gym网络测试为例，新建终端，进入rl_dog工作空间，可以打开pytorch虚拟环境。
+```bash 
+conda activate pytorch #根据环境需求选择是否执行
+cd ~/ros_ws/rl_dog
+source devel/setup.bash
+rosrun rl_dog_test xxx.py #运行用户文件(纯CPG控制文件为little_dog_core_pureCPG.py)
+```
+### 5.6 注意事项
+每次测试完成后，请将中继接收节点、中继发布节点和用户程序都中止。
