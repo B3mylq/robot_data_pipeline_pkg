@@ -32,18 +32,16 @@ int main(int argc, char **argv){
 
     ros::Publisher pub_test = nh.advertise<std_msgs::String>("Hello",10);
 
-    // 在这一行定义中继发布节点发布的rostopic名称
     ros::Publisher robot_data_pub = nh.advertise<robot_data_pipeline_pkg::RobotState>("Robot_Data",10);
     robot_data_pipeline_pkg::RobotState robot_state_message;
 
-    // 在这一行定义上下位机通信频率，最高500Hz
     ros::Rate loop_rate(20);//1000Hz
 
     while (ros::ok())
     {
         std_msgs::String msg;
         msg.data = "hello, world";
-        // pub_test.publish(msg);
+        pub_test.publish(msg);
 
 
 ///////////////////////////////////////////////////////////////
@@ -58,8 +56,8 @@ int main(int argc, char **argv){
             robot_state_message.imu_data[3+i] = data_trans.imu_gyro[i];
             robot_state_message.imu_data[6+i] = data_trans.imu_acc[i];      
             robot_state_message.body_pos[i] = data_trans.body_pos[i];  
-            robot_state_message.body_vel[i] = 0.0;    
-            // robot_state_message.body_vel[i] = data_trans.body_vel[i];     
+            // robot_state_message.body_vel[i] = 0.0;    
+            robot_state_message.body_vel[i] = data_trans.body_vel[i];     
         }
         // spdlog::info("q_vec:{},{},{}",robot_state_message.q[0],robot_state_message.q[1],robot_state_message.q[2]);
         // spdlog::info("qd_vec:{},{},{}",robot_state_message.qd[0],robot_state_message.qd[1],robot_state_message.qd[2]);

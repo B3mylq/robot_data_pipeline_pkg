@@ -27,8 +27,8 @@ void DataTrans::getRobotData(){
     // spdlog::info("test1");
     // getRobotCustomData();
     // spdlog::info("test2");
+    getRobotCustomData();
     getDataTransform();
-
 
 
 }
@@ -65,7 +65,7 @@ void DataTrans::getDataTransform(){
     imu_acc = Vec3d(imu_acc_raw[0],imu_acc_raw[1],imu_acc_raw[2]);
 
     body_pos = Vec3d(0,0,body_pos_raw[2]);
-    body_vel = Vec3d(body_vel_raw[0],body_vel_raw[1],0);
+    body_vel = Vec3d(body_vel_raw[0],body_vel_raw[1],body_vel_raw[2]);
 
 }
 
@@ -85,7 +85,9 @@ void DataTrans::putDataTransform(){
 }
 
 void DataTrans::getRobotRawData(){
+    spdlog::info("test1");
     int byte_received = client.GetData(RobotDataType(1), data_host);/// 获取机器人本体传感器数据
+    spdlog::info("test2");
     if(byte_received==-1) std::cout << "error happened when reading robot raw data" << std::endl;
     for(int i=0;i<18;i++){
         q_raw[i] = data_host.GetRobotStateData()->motion_data[i].actual_pos/pos2count_ratio[i];
@@ -107,15 +109,16 @@ void DataTrans::getRobotCustomData(){
     rapidjson::Value& param1 = (*p_data)["body_height"];
     rapidjson::Value& param2 = (*p_data)["body_vel_x"];
     rapidjson::Value& param3 = (*p_data)["body_vel_y"];  
+    rapidjson::Value& param4 = (*p_data)["body_vel_z"];  
     body_pos_raw[2] = param1.GetDouble();
     body_vel_raw[0] = param2.GetDouble();
     body_vel_raw[1] = param3.GetDouble();
+    body_vel_raw[2] = param4.GetDouble();
 }
 
 
 void DataTrans::downloadData2Robot(){
-    std::string cmdName = gaitName + " --online" + " --rl_control_flag=1.0" + " --first_q_flag=";
-    cmdName = cmdName + std::to_string(q_first_flag);
+    std::string cmdName = gaitName + " --online" + " --rl_control_flag=1.0";
     cmdName =cmdName + " --update_q_flag=1.0" + " --q_target=";
     for(int i=0;i<17;i++){
         cmdName = cmdName + std::to_string(q_target[i]) + ",";
